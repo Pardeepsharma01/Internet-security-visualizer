@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Internet Security Visualizer
 
-## Getting Started
+A professional cybersecurity analytics dashboard built with Next.js (App Router), Tailwind CSS v4, Framer Motion, Chart.js, and Leaflet. 
 
-First, run the development server:
+It queries the Shodan API to allow users to analyze internet exposure and security risks for an IP address.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Dark Cyber Theme:** Custom styled neon UI built with modern Tailwind CSS v4 variables.
+- **IP Analyzer:** Queries the global Shodan API to fetch deep host telemetry.
+- **Risk Indicators:** Automatically classifies security risk based on open database or remote access ports.
+- **Data Visualizations:** 
+  - Dynamic Bar charts mapping open ports (Chart.js)
+  - Interactive Geolocation maps tracking server IPs (Leaflet)
+- **Fluid Animations:** Elegant page transitions and interactions using Framer Motion.
+- **Responsive Architecture:** Fully functional layout across mobile, tablet, and desktop viewports.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment & Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+2. **Environment Variables**
+   Create a `.env.local` file in the root directory and add your Shodan API key:
+   ```env
+   SHODAN_API_KEY=your_shodan_api_key_here
+   ```
+   > Note: If no API key is provided, the dashboard will fallback to mock data to demonstrate functionality.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Development Server**
+   ```bash
+   npm run dev
+   ```
+   Visit `http://localhost:3000` to interact with the dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Production Build**
+   ```bash
+   npm run build
+   npm run start
+   ```
+   The site is optimized and ready to deploy out-of-the-box on Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Documentation
 
-## Deploy on Vercel
+Full developer documentation is available in the [`documentation/`](./documentation/) folder.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| File | Description |
+|---|---|
+| [ISV_Documentation.md](./documentation/ISV_Documentation.md) | Complete project documentation — overview, features, tech stack, folder structure, data flow, API integration, PDF generation logic, setup guide, challenges & fixes, and future improvements. |
