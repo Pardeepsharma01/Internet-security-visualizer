@@ -39,6 +39,5 @@ export default function InternetSecurityVisualizerLanding() {
         <Footer />
       </div>
     </div>
-   
   );
 }

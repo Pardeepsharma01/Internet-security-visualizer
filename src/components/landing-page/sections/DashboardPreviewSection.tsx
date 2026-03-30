@@ -16,11 +16,7 @@ function MiniPortBar({
   status: PortStatus;
 }) {
   const color =
-    status === "open"
-      ? "#10B981"
-      : status === "warn"
-      ? "#F59E0B"
-      : "#EF4444";
+    status === "open" ? "#10B981" : status === "warn" ? "#F59E0B" : "#EF4444";
 
   return (
     <div className="flex items-center gap-3 py-2 border-b border-white/5">
@@ -64,8 +60,7 @@ export default function DashboardPreviewSection() {
         <div
           className="w-200 h-100 opacity-10 blur-3xl rounded-full"
           style={{
-            background:
-              "radial-gradient(ellipse, #00E5FF 0%, transparent 70%)",
+            background: "radial-gradient(ellipse, #00E5FF 0%, transparent 70%)",
           }}
         />
       </div>
@@ -98,8 +93,7 @@ export default function DashboardPreviewSection() {
             Dashboard{" "}
             <span
               style={{
-                background:
-                  "linear-gradient(90deg, #10B981, #00E5FF)",
+                background: "linear-gradient(90deg, #10B981, #00E5FF)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -112,8 +106,8 @@ export default function DashboardPreviewSection() {
             className="text-gray-400 max-w-xl mx-auto"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            A live glimpse into the intelligence dashboard — built for
-            security analysts and researchers.
+            A live glimpse into the intelligence dashboard — built for security
+            analysts and researchers.
           </p>
         </motion.div>
 
@@ -179,8 +173,7 @@ export default function DashboardPreviewSection() {
                       className="text-xs font-mono font-semibold"
                       style={{
                         color,
-                        fontFamily:
-                          "'JetBrains Mono', monospace",
+                        fontFamily: "'JetBrains Mono', monospace",
                       }}
                     >
                       {val}
@@ -256,15 +249,11 @@ export default function DashboardPreviewSection() {
                     color: "#3B82F6",
                   },
                 ].map(({ cve, sev, color }) => (
-                  <div
-                    key={cve}
-                    className="flex items-center justify-between"
-                  >
+                  <div key={cve} className="flex items-center justify-between">
                     <span
                       className="text-xs font-mono text-gray-400"
                       style={{
-                        fontFamily:
-                          "'JetBrains Mono', monospace",
+                        fontFamily: "'JetBrains Mono', monospace",
                       }}
                     >
                       {cve}
@@ -275,8 +264,7 @@ export default function DashboardPreviewSection() {
                       style={{
                         color,
                         background: `${color}20`,
-                        fontFamily:
-                          "'JetBrains Mono', monospace",
+                        fontFamily: "'JetBrains Mono', monospace",
                       }}
                     >
                       {sev}
@@ -332,8 +320,7 @@ export default function DashboardPreviewSection() {
                       className="text-xs font-mono"
                       style={{
                         color: ok ? "#10B981" : "#EF4444",
-                        fontFamily:
-                          "'JetBrains Mono', monospace",
+                        fontFamily: "'JetBrains Mono', monospace",
                       }}
                     >
                       {val}

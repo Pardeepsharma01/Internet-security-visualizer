@@ -29,17 +29,27 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const handleNav = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
+  const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+
+    // Close the mobile menu first, then scroll after the exit animation
+    // completes (~300ms). This prevents the AnimatePresence height:0
+    // collapse from blocking the scroll on mobile/iOS.
     setMobileOpen(false);
 
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    setTimeout(() => {
+      // "Dashboard" link always scrolls to the very top of the page
+      if (href === "#dashboard") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
+      const el = document.querySelector(href);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 80; // 80px navbar offset
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 320);
   };
 
   return (
@@ -51,7 +61,7 @@ export default function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-[#0B0F19]/90 backdrop-blur-lg border-b border-white/10 py-3"
-          : "py-5"
+          : "py-5",
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -63,15 +73,10 @@ export default function Navbar() {
             <div
               className="absolute inset-1 rounded-md flex items-center justify-center"
               style={{
-                background:
-                  "linear-gradient(135deg, #00E5FF22, #3B82F622)",
+                background: "linear-gradient(135deg, #00E5FF22, #3B82F622)",
               }}
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="w-5 h-5"
-              >
+              <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                 <path
                   d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"
                   stroke="#00E5FF"
@@ -118,22 +123,21 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="flex items-center gap-3">
-            <Link href={"/dashboard"}>
-          <motion.button
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-black transition-all duration-200"
-            style={{
-              background:
-                "linear-gradient(135deg, #00E5FF, #3B82F6)",
-              fontFamily: "'Orbitron', monospace",
-              letterSpacing: "0.05em",
-            }}
-          >
-            <span className="w-2 h-2 bg-black rounded-full animate-pulse" />
-            Launch Dashboard
-          </motion.button>
-            </Link>
+          <Link href={"/dashboard"}>
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-black transition-all duration-200"
+              style={{
+                background: "linear-gradient(135deg, #00E5FF, #3B82F6)",
+                fontFamily: "'Orbitron', monospace",
+                letterSpacing: "0.05em",
+              }}
+            >
+              <span className="w-2 h-2 bg-black rounded-full animate-pulse" />
+              Launch Dashboard
+            </motion.button>
+          </Link>
 
           {/* Mobile Hamburger */}
           <button
@@ -169,7 +173,6 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
-            <Link href={"/dashboard"}>
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -188,18 +191,18 @@ export default function Navbar() {
                 </a>
               ))}
 
-              <button
-                className="w-full py-2.5 rounded-lg text-sm font-semibold text-black"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #00E5FF, #3B82F6)",
-                }}
-              >
-                Launch Dashboard
-              </button>
+              <Link href="/dashboard">
+                <button
+                  className="w-full py-2.5 rounded-lg text-sm font-semibold text-black"
+                  style={{
+                    background: "linear-gradient(135deg, #00E5FF, #3B82F6)",
+                  }}
+                >
+                  Launch Dashboard
+                </button>
+              </Link>
             </div>
           </motion.div>
-            </Link>
         )}
       </AnimatePresence>
     </motion.nav>

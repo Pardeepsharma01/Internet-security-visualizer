@@ -15,8 +15,7 @@ export default function HeroSection() {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full blur-3xl pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, #00E5FF15 0%, transparent 70%)",
+          background: "radial-gradient(circle, #00E5FF15 0%, transparent 70%)",
         }}
       />
 
@@ -30,8 +29,7 @@ export default function HeroSection() {
         }}
         className="absolute top-1/2 left-1/4 w-100 h-100 rounded-full blur-3xl pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, #3B82F620 0%, transparent 70%)",
+          background: "radial-gradient(circle, #3B82F620 0%, transparent 70%)",
         }}
       />
 
@@ -70,8 +68,7 @@ export default function HeroSection() {
 
           <span
             style={{
-              background:
-                "linear-gradient(90deg, #00E5FF, #3B82F6)",
+              background: "linear-gradient(90deg, #00E5FF, #3B82F6)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
@@ -88,8 +85,8 @@ export default function HeroSection() {
           className="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 mb-10 leading-relaxed"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
-          Analyze internet-exposed services, open ports, vulnerabilities,
-          and infrastructure using real network intelligence.
+          Analyze internet-exposed services, open ports, vulnerabilities, and
+          infrastructure using real network intelligence.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -99,73 +96,69 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.45 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-        <Link href="/dashboard" >
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 0 30px #00E5FF50",
-            }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold text-black transition-all duration-200"
-            style={{
-              background:
-                "linear-gradient(135deg, #00E5FF, #3B82F6)",
-              fontFamily: "'Orbitron', monospace",
-              letterSpacing: "0.06em",
-            }}
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <Link href="/dashboard">
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 30px #00E5FF50",
+              }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold text-black transition-all duration-200"
+              style={{
+                background: "linear-gradient(135deg, #00E5FF, #3B82F6)",
+                fontFamily: "'Orbitron', monospace",
+                letterSpacing: "0.06em",
+              }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-              />
-            </svg>
-
-            Launch Dashboard
-          </motion.button>
-            </Link>
-            <Link href="/ip-analyzer" >
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              borderColor: "#00E5FF",
-              color: "#00E5FF",
-            }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold text-gray-300 border border-white/20 backdrop-blur-md transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/20"
-            style={{
-              fontFamily: "'Orbitron', monospace",
-              letterSpacing: "0.06em",
-            }}
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+              Launch Dashboard
+            </motion.button>
+          </Link>
+          <Link href="/ip-analyzer">
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                borderColor: "#00E5FF",
+                color: "#00E5FF",
+              }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold text-gray-300 border border-white/20 backdrop-blur-md transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/20"
+              style={{
+                fontFamily: "'Orbitron', monospace",
+                letterSpacing: "0.06em",
+              }}
             >
-              <circle cx="11" cy="11" r="8" strokeWidth={2} />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="11" cy="11" r="8" strokeWidth={2} />
 
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="m21 21-4.35-4.35"
-              />
-            </svg>
-
-            Analyze an IP
-          </motion.button>
-            </Link>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="m21 21-4.35-4.35"
+                />
+              </svg>
+              Analyze an IP
+            </motion.button>
+          </Link>
         </motion.div>
-        
 
         {/* Stats */}
         <motion.div
@@ -217,8 +210,7 @@ export default function HeroSection() {
               <span
                 className="ml-3 text-xs text-gray-500"
                 style={{
-                  fontFamily:
-                    "'JetBrains Mono', monospace",
+                  fontFamily: "'JetBrains Mono', monospace",
                 }}
               >
                 isv-terminal ~ scan

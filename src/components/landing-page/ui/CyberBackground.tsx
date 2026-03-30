@@ -174,8 +174,7 @@ export default function CyberBackground() {
       <div
         className="absolute -top-40 left-1/2 -translate-x-1/2 w-225 h-125 rounded-full opacity-[0.07]"
         style={{
-          background:
-            "radial-gradient(ellipse, #00E5FF 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, #00E5FF 0%, transparent 70%)",
         }}
       />
 

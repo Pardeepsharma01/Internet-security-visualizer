@@ -44,8 +44,8 @@ It queries the Shodan API to allow users to analyze internet exposure and securi
 
 ## Documentation
 
-Full developer documentation is available in the [`documentation/`](./documentation/) folder.
+Full developer documentation is available .
 
 | File | Description |
 |---|---|
-| [ISV_Documentation.md](./documentation/ISV_Documentation.md) | Complete project documentation — overview, features, tech stack, folder structure, data flow, API integration, PDF generation logic, setup guide, challenges & fixes, and future improvements. |
+| [https://drive.google.com/file/d/1Yc-xveXACr7f-lDWUIVfu4d040JR_S7_/view?usp=sharing](https://drive.google.com/file/d/1Yc-xveXACr7f-lDWUIVfu4d040JR_S7_/view?usp=sharing) | Complete project documentation — overview, features, tech stack, folder structure, data flow, API integration, PDF generation logic, setup guide, challenges & fixes, and future improvements. |
